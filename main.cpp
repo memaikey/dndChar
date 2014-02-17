@@ -5,25 +5,32 @@ date created: 17-02-2014
 date edited: 17-02-2014
 misc:
 
-version:
-v0.2
-Setup project
+Version control:
+v0.4
+Rebuilding lost data because of bad merge. Splitting abilities class to own file.
+
+v0.1
+Setup
 */
 
 #include <iostream> //cout
-//#include <iomanip> //setw
-//#include <array> //array
 #include <String> //string
 #include <unordered_map> //dictionary
+
 using namespace std;
 
-#include "Abilities.h"
+#include "abilities.h"
+#include "personalIncludes.h"
 
 int main()
 {
-    Abilities Maikel("Zinnealla");
-    Maikel.giveInfo();
+    ClearScreen();
+    Abilities Maikel;
     Maikel.inputRolls();
     Maikel.giveInfo();
+    cout << "Press return to exit." << endl;
+    cin.get();
+    cin.get();
     return 0;
 }
+

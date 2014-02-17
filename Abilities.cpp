@@ -4,32 +4,31 @@ programmer: Maikel van Vliet
 date created: 17-02-2014
 date edited: 17-02-2014
 misc:
-
-version:
-v0.2
-Setup project
 */
 
-#include <iostream> //cout and cin
+#include <iostream> //cout
 #include <String> //string
 #include <unordered_map> //dictionary
+
 using namespace std;
 
-#include "Abilities.h"
+#include "abilities.h"
 
-Abilities::Abilities(string n) : name(n)
+Abilities::Abilities()
 {
-    stats.emplace("Str", 10);
-    stats.emplace("Dex", 10);
-    stats.emplace("Con", 10);
-    stats.emplace("Int", 10);
-    stats.emplace("Cha", 10);
-    stats.emplace("Wis", 10)
+    giveName();
+    stats.emplace("str", 8);
+    stats.emplace("Dex", 8);
+    stats.emplace("Con", 8);
+    stats.emplace("Int", 8);
+    stats.emplace("Cha", 8);
+    stats.emplace("Wis", 8)
     ;
 }
 
 void Abilities::giveInfo()
 {
+    cout << string( 100, '\n' ); //cls
     cout << name << endl;
     for (const auto &s: stats)
     {
@@ -40,14 +39,12 @@ void Abilities::giveInfo()
 
 void Abilities::inputRolls()
 {
-    cout << "Give the 6 values you rolled" << endl;
-    for(auto i : stats)
+    cout << "Roll your six ability scores, roll 4d6 and add the best 3 dice." << endl << "Do this six times and then distribute these scores below:" << endl << endl;
+    for(auto& i : stats)
     {
-        int temp;
-        cout << "What did you roll for " << i.first <<"?" << endl;
-        cin >> temp;
-        editStats(i.first, temp);
-        cout << i.first << ": " << temp << endl << endl;
+        cout << "What did you roll for " << i.first << "?" << endl;
+        cin >> i.second;
+        //cout << i.first << ": " << i.second << endl << endl; //used for debug and feedback, did not look good.
     }
     cout << endl;
 }
@@ -56,3 +53,23 @@ void Abilities::editStats(string s, int n)
 {
     stats[s] = n;
 }
+
+void Abilities::giveName()
+{
+    string temp;
+    cout << "What is the name of the character? To end input type \"0\" " << endl;
+    while (cin >> temp && temp != "0")
+    {
+        cout << string( 100, '\n' ); //cls
+        name.append(temp);
+        name.append(" ");
+        cout << "What is the name of the character? To end input type \"0\" " << endl;
+        cout << name << endl;
+    }
+    cout << string( 100, '\n' ); //cls
+    cout << "Hello " << name << ", press return to continue." << endl;
+    cin.get();
+    cin.get();
+    cout << string( 100, '\n' ); //cls
+}
+
