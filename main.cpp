@@ -13,73 +13,66 @@ Setup project
 
 #include <iostream> //cout
 #include <iomanip> //setw
-#include <array> //array
+//#include <array> //array
 #include <String> //string
+#include <unordered_map> //dictionary
 using namespace std;
 
 class Abilities
 {
 public:
     Abilities(string n);
-    void giveAbilities(array<int,6> input);
     void giveInfo();
     void inputRolls();
+    void editStats(string s, int n);
 private:
-    int Str;
-    int Dex;
-    int Con;
-    int Int;
-    int Cha;
-    int Wis;
+    unordered_map<string, int> stats;
     string name;
 };
 
-Abilities::Abilities(string n)
+Abilities::Abilities(string n) : name(n)
 {
-    name = n;
-}
-
-void Abilities::giveAbilities(array<int,6> input)
-{
-    Str = input[0];
-    Dex = input[1];
-    Con = input[2];
-    Int = input[3];
-    Cha = input[4];
-    Wis = input[5];
+    stats.emplace("str", 10);
+    stats.emplace("Dex", 10);
+    stats.emplace("Con", 10);
+    stats.emplace("Int", 10);
+    stats.emplace("Cha", 10);
+    stats.emplace("Wis", 10)
+    ;
 }
 
 void Abilities::giveInfo()
 {
     cout << name << endl;
-    cout << "Str = " << setw(2) << Str << endl;
-    cout << "Dex = " << setw(2) << Dex << endl;
-    cout << "Con = " << setw(2) << Con << endl;
-    cout << "Int = " << setw(2) << Int << endl;
-    cout << "Cha = " << setw(2) << Cha << endl;
-    cout << "Wis = " << setw(2) << Wis << endl;
+    for (const auto &s: stats)
+    {
+        cout << s.first << ": " << s.second << endl;
+    }
     cout << endl;
 }
 
 void Abilities::inputRolls()
 {
-    array<int,6> input;
     cout << "Give the 6 values you rolled" << endl;
-    cout << "The order is Str, Dex, Con, Int, Cha and Wis." << endl;
-    for(int i = 0; i<6; ++i)
+    for(auto i : stats)
     {
-        cin >> input[i];
+        int temp;
+        cout << "What did you roll for " << i.first <<"?" << endl;
+        cin >> temp;
+        editStats(i.first, temp);
+        cout << i.first << ": " << temp << endl << endl;
     }
-    giveAbilities(input);
     cout << endl;
+}
+
+void Abilities::editStats(string s, int n)
+{
+    stats[s] = n;
 }
 
 int main()
 {
     Abilities Maikel("Zinnealla");
-    array<int,6> myArray;
-    myArray.fill(10);
-    Maikel.giveAbilities(myArray);
     Maikel.giveInfo();
     Maikel.inputRolls();
     Maikel.giveInfo();
