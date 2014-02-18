@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1392727071 source:c:\users\tako\documents\github\dndchar\main.cpp
+	<iostream>
+	<String>
+	<unordered_map>
+	"abilities.h"
+	"personalIncludes.h"
+
+1392727071 c:\users\tako\documents\github\dndchar\abilities.h
+	<iostream>
+	<String>
+	<unordered_map>
+
+1392730329 c:\users\tako\documents\github\dndchar\personalincludes.h
+	<iostream>
+	<string>
+
