@@ -36,6 +36,7 @@
 		<Unit filename="character.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="personalIncludes.h" />
+		<Unit filename="skill.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

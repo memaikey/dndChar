@@ -2,9 +2,11 @@
 project: DnDChar
 programmer: Maikel van Vliet
 date created: 17-02-2014
-date edited: 17-02-2014
+date edited: 19-02-2014
 misc:
 */
+
+
 #ifndef _abilities_
 #define _abilities_
 
@@ -14,10 +16,10 @@ misc:
 
 using namespace std;
 
-class Abilities
+class Character
 {
 public:
-    Abilities();
+    Character();
     void giveInfo();
     void inputRolls();
     void editStats(string s, int n);
