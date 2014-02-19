@@ -22,13 +22,12 @@ Abilities::Abilities()
     stats.emplace("Con", 8);
     stats.emplace("Int", 8);
     stats.emplace("Cha", 8);
-    stats.emplace("Wis", 8)
-    ;
+    stats.emplace("Wis", 8);
 }
 
 void Abilities::giveInfo()
 {
-    cout << string( 100, '\n' ); //cls
+    cout << string( '\n', 100 ); //cls
     cout << name << endl;
     for (const auto &s: stats)
     {
@@ -60,16 +59,16 @@ void Abilities::giveName()
     cout << "What is the name of the character? To end input type \"0\" " << endl;
     while (cin >> temp && temp != "0")
     {
-        cout << string( 100, '\n' ); //cls
+        cout << string( '\n', 100 ); //cls
         name.append(temp);
         name.append(" ");
         cout << "What is the name of the character? To end input type \"0\" " << endl;
         cout << name << endl;
     }
-    cout << string( 100, '\n' ); //cls
+    cout << string( '\n', 100 ); //cls
     cout << "Hello " << name << ", press return to continue." << endl;
     cin.get();
     cin.get();
-    cout << string( 100, '\n' ); //cls
+    cout << string( '\n', 100 ); //cls
 }
 
