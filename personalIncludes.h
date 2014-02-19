@@ -14,7 +14,7 @@ misc: Additional includes are separated to this for to keep main clean.
 
 void ClearScreen()
 {
-    cout << string( '\n', 100 ); //cls
+    cout << string( 100, '\n' ); //cls
 }
 
 #endif // _personalIncludes_

@@ -1,17 +1,34 @@
 # depslib dependency file v1.0
-1392727071 source:c:\users\tako\documents\github\dndchar\main.cpp
+1392815887 source:c:\users\tako\documents\github\dndchar\main.cpp
 	<iostream>
 	<String>
 	<unordered_map>
-	"abilities.h"
 	"personalIncludes.h"
+	"character.h"
 
 1392727071 c:\users\tako\documents\github\dndchar\abilities.h
 	<iostream>
 	<String>
 	<unordered_map>
 
-1392730329 c:\users\tako\documents\github\dndchar\personalincludes.h
+1392816031 c:\users\tako\documents\github\dndchar\personalincludes.h
 	<iostream>
 	<string>
+
+1392815680 source:c:\users\tako\documents\github\dndchar\abilities.cpp
+	<iostream>
+	<String>
+	<unordered_map>
+	"Character.h"
+
+1392815650 c:\users\tako\documents\github\dndchar\character.h
+	<iostream>
+	<String>
+	<unordered_map>
+
+1392815684 source:c:\users\tako\documents\github\dndchar\character.cpp
+	<iostream>
+	<String>
+	<unordered_map>
+	"Character.h"
 

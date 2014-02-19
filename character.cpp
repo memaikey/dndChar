@@ -27,7 +27,7 @@ Character::Character()
 
 void Character::giveInfo()
 {
-    cout << string( '\n', 100 ); //cls
+    cout << string( 100, '\n' ); //cls
     cout << name << endl;
     for (const auto &s: stats)
     {
@@ -59,16 +59,16 @@ void Character::giveName()
     cout << "What is the name of the character? To end input type \"0\" " << endl;
     while (cin >> temp && temp != "0")
     {
-        cout << string( '\n', 100 ); //cls
+        cout << string( 100, '\n' ); //cls
         name.append(temp);
         name.append(" ");
         cout << "What is the name of the character? To end input type \"0\" " << endl;
         cout << name << endl;
     }
-    cout << string( '\n', 100 ); //cls
+    cout << string( 100, '\n' ); //cls
     cout << "Hello " << name << ", press return to continue." << endl;
     cin.get();
     cin.get();
-    cout << string( '\n', 100 ); //cls
+    cout << string( 100, '\n' ); //cls
 }
 

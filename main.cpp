@@ -6,6 +6,12 @@ date edited: 17-02-2014
 misc:
 
 Version control:
+v0.7
+Renamed ability to character
+
+v0.6
+Clearscreen bug fixed
+
 v0.4
 Rebuilding lost data because of bad merge. Splitting abilities class to own file.
 
@@ -19,13 +25,14 @@ Setup
 
 using namespace std;
 
-#include "abilities.h"
+//#include "abilities.h" //replaced by character.h
 #include "personalIncludes.h"
+#include "character.h"
 
 int main()
 {
     ClearScreen();
-    Abilities Maikel;
+    Character Maikel;
     Maikel.inputRolls();
     Maikel.giveInfo();
     cout << "Press return to exit." << endl;

@@ -32,8 +32,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="abilities.cpp" />
-		<Unit filename="abilities.h" />
+		<Unit filename="character.cpp" />
+		<Unit filename="character.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="personalIncludes.h" />
 		<Extensions>
